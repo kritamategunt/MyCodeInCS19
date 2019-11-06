@@ -14,7 +14,7 @@ public class algo {
 int cc;
    void sieve(int n) 
     { 
-       boolean []pm = new boolean[n+1];
+        boolean []pm = new boolean[n+1];
         for (int i = 0; i <=n ; i++) {
             pm[i] = true;
         }
@@ -35,11 +35,44 @@ int cc;
         
         
     } 
- 
-   
     int getCount(){
         return cc;
     }
+    
+    static void mode(int a[],int n){
+        int maxValue = 0,maxCount = 0;
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            for (int l = 0; l < n ; ++l) {
+                if (a[l]==a[i]) {
+                    count++;
+                }
+            }
+            if(count>maxCount){
+                count = maxCount;
+                 maxValue = a[i];
+            }
+        }
+        System.out.println(maxValue);
+        
+    }
+    
+     public static int[][] matrixMultiplication(int[][] a, int[][] b) {
+        int[][] c = new int[a.length][b[0].length];
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b[0].length; j++) {
+                for (int k = 0; k < a[0].length; k++) {
+                    c[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+
+        return c;
+    }
+    
+    
+   
    
    
 }
